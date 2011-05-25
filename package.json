@@ -5,7 +5,6 @@
   "homepage": "http://#",
   "keywords": ["javascript", "express", "coffeescript", "coffeekup", "generator", "eco"],
   "author": "twilson63",
-  "private": true,
   "dependencies": {
     "coffee-script": "1.1.1",
     "eco": "1.0.3"

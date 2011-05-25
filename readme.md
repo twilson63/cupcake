@@ -27,6 +27,15 @@ A project generator for express and coffee-script.
 
 # You have a working express app in coffee-script!
 
+CupCake creates the following files for you to get hacking:
+
+app.coffee
+app.js
+package.json
+readme.md
+views
+  index.coffee
+  layout.coffee
 
 Don't forget to make adjustments to your Readme, and Package.js
 
