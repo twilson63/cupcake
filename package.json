@@ -1,18 +1,22 @@
 {
   "name": "cupcake",
   "description": "With Sprinkles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "http://#",
+  "keywords": ["javascript", "express", "coffeescript", "coffeekup", "generator", "eco"],
   "author": "twilson63",
   "private": true,
   "dependencies": {
-    "coffee-script": ">= 1.x",
-    "eco": ">= 1.x"
+    "coffee-script": "1.1.1",
+    "eco": "1.0.3"
   },
-  "engines": { "node": ">= 0.4.7" }
-  "bin":          {
+  "directories" : {
+    "lib" : "./lib"
+  },
+  "engines": { "node": ">= 0.4.7" },
+  "bin": {
     "cupcake":     "./bin/cupcake"
-  },
+  }
 
 }
 

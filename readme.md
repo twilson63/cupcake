@@ -1,6 +1,6 @@
 # CupCake
 
-_Have a cupcake with your express and coffee_
+_Have a cupcake with your express, coffee and coffeekup_
 
 A project generator for express and coffee-script.  
 
@@ -9,10 +9,9 @@ A project generator for express and coffee-script.
 * nodejs
 * npm
 
-
 # Install
 
-    npm install cupcake
+    npm install cupcake -g
 
 # Usage
 

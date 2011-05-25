@@ -12,7 +12,7 @@ exports.run = ->
     console.log 'Please enter project name!' 
     return
 
-  console.log 'Welcome to Cupcake'
+  console.log 'Welcome to Cupcake - 0.0.2'
   project = process.argv.slice 2
   data = { project: project }
 
@@ -31,6 +31,7 @@ exports.run = ->
     'views/index.coffee'
   ]
 
+  console.log "-----------------"
   console.log "Successfully created #{project}"
   console.log "To Run"
   console.log "cd #{project}"
@@ -38,6 +39,8 @@ exports.run = ->
   console.log "coffee app.coffee"
   console.log "-----------------"
   console.log "You should nav to http://localhost:3000"
+  console.log "-----------------"
+  console.log "Thank you for using cupcake, please let us know if you have any problems"
 
 
 
