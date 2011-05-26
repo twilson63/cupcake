@@ -16,6 +16,10 @@ A project generator for express and coffee-script.
 # Usage
 
     cupcake [project name]
+
+    - choose your template
+    - choose your datastore
+
     
 # Run your new project
 

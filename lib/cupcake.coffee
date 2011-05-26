@@ -16,13 +16,13 @@ class Cupcake
     ask 'Enter Number', /[0-9]/, callback 
 
   build_meta: (data, callback) ->
-    @prompt @ARTIFACTS[0].name, @ARTIFACTS[0].list, (framework) =>
-      data.framework = framework
-      @prompt @ARTIFACTS[1].name, @ARTIFACTS[1].list, (template) =>
-        data.template = template
-        @prompt @ARTIFACTS[2].name, @ARTIFACTS[2].list, (datastore) =>
-          data.datastore = datastore
-          callback data
+    #@prompt @ARTIFACTS[0].name, @ARTIFACTS[0].list, (framework) =>
+    data.framework = '1'
+    @prompt @ARTIFACTS[1].name, @ARTIFACTS[1].list, (template) =>
+      data.template = template
+      @prompt @ARTIFACTS[2].name, @ARTIFACTS[2].list, (datastore) =>
+        data.datastore = datastore
+        callback data
 
   render_template: (name, data) ->
     template = fs.readFileSync __dirname + "/../templates/#{name}.eco", "utf8"
@@ -41,16 +41,31 @@ class Cupcake
       'app.coffee'
       'readme.md'
       'Procfile'
-      'views/layout.coffee'
-      'views/index.coffee'
     ]
+    if data.template is '1'
+      @render_template(name, data) for name in [
+        'views/layout.coffee'
+        'views/index.coffee'
+      ]
+    else if data.template is '2'
+      @render_template(name, data) for name in [
+        'views/layout.eco'
+        'views/index.eco'
+      ]
+    else if data.template is '3'
+      @render_template(name, data) for name in [
+        'views/layout.jade'
+        'views/index.jade'
+      ]
+ 
+
 
   thank_you: (project) ->
     console.log """
 -----------------
 Successfully created #{project}
 To Run
-cd #{project}"
+cd #{project}
 npm install .
 coffee app.coffee
 -----------------
