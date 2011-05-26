@@ -9,10 +9,10 @@ html ->
     link(rel: 'canonical', href: @canonical) if @canonical?
 
     link rel: 'icon', href: '/favicon.png'
-    link rel: 'stylesheet', href: '/app.css'
+    link rel: 'stylesheet', href: '/stylesheets/app.css'
 
     script src: 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
-    script src: '/app.js'
+    script src: '/javascripts/app.js'
 
     coffeescript ->
       $(document).ready ->
