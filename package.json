@@ -7,7 +7,8 @@
   "author": "twilson63",
   "dependencies": {
     "coffee-script": "1.1.1",
-    "eco": "1.0.3"
+    "eco": "1.0.3",
+    "ask": ">= 0.x"
   },
   "directories" : {
     "lib" : "./lib"
