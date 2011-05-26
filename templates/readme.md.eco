@@ -2,6 +2,14 @@
 
 Welcome
 
+Framework: <% if @framework == '1': %>express<% else if @framework == '2': %>meryl<% end %>
+ 
+Template: <% if @template == '1': %>Coffeekup<% else if @template ==
+'2': %>Eco<% else %>Jade<% end %>
+
+DataStore: <% if @datastore == '1': %>MongoSkin<% else if @datastore ==
+'2' %>Redis<% else %>MySql<% end %>
+ 
 # About
 
 # Install

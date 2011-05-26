@@ -37,12 +37,12 @@ class Cupcake
     # Create Template Files
     @render_template(name, data) for name in [
       'package.json'
-      'app.js'
-      'app.coffee'
-      'readme.md'
-      'Procfile'
-      'views/layout.coffee'
-      'views/index.coffee'
+    #   'app.js'
+    #   'app.coffee'
+    #   'readme.md'
+    #   'Procfile'
+    #   'views/layout.coffee'
+    #   'views/index.coffee'
     ]
 
   thank_you: (project) ->

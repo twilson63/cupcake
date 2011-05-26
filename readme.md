@@ -44,7 +44,7 @@ Don't forget to make adjustments to your Readme, and Package.js
 Please send pull requests to continue to add, this is just the
 beginning.  Lets make an awesome application template generator!
 
-# Future
+# Future - (In Progress)
 
 The plans is to prompt for type of framework, template, and data libs.
 For example:
