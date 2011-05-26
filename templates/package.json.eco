@@ -9,8 +9,8 @@
     "coffee-script": ">= 1.x",
     <% if @datastore == '1': %>"mongoskin": ">= 0.x",<% else if @datastore == '2': %>"redis": ">= 0.x",<% else: %>"mysql": ">= 0.x",<% end %>
     <% if @template == '1': %>"coffeekup": ">= 0.x",<% else if @template == '2': %>"eco", ">= 0.x",<% else: %>"jade", ">= 0.x"<% end %>
-    <% if @framework == '1': %>"express": "2.x",<% else if @framework == '2': %>"meryl": "> 0.x", <% end %>
-    "connect": ">= 1.4",
+    <% if @framework == '1': %>"express": ">= 2.x",<% else if @framework == '2': %>"meryl": "> 0.x", <% end %>
+    "connect": ">= 1.x",
     "log4js": ">= 0.2.5"
   },
   "engines": { "node": ">= 0.4.7" }
