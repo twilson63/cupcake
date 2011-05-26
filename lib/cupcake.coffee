@@ -32,6 +32,9 @@ class Cupcake
     # Create Project Dir
     fs.mkdirSync "./#{project}", 0755
     fs.mkdirSync "./#{project}/views", 0755
+    fs.mkdirSync "./#{project}/public/", 0755
+    fs.mkdirSync "./#{project}/public/stylesheets", 0755
+    fs.mkdirSync "./#{project}/public/javascripts", 0755
 
   build_files: (data) ->
     # Create Template Files
@@ -46,6 +49,8 @@ class Cupcake
       @render_template(name, data) for name in [
         'views/layout.coffee'
         'views/index.coffee'
+        'public/stylesheets/app.css'
+        'public/javascripts/app.js'
       ]
     else if data.template is '2'
       @render_template(name, data) for name in [
