@@ -48,6 +48,21 @@ Don't forget to make adjustments to your Readme, and Package.js
 Please send pull requests to continue to add, this is just the
 beginning.  Lets make an awesome application template generator!
 
+- [@kadirpekel](https://github.com/coffeemate)
+- [@kwindham](https://github.com/gradus)
+
+[https://github.com/twilson63/cupcake/contributors](https://github.com/twilson63/cupcake/contributors)
+
+# Present - (Working)
+
+As of 0.0.6
+
+You now create an Express or Meryl project, with Coffeekup, Eco, or
+Jade, and Mongoskin, Redis, or MySql.
+
+Working on Zappa next....
+
+
 # Future - (In Progress)
 
 The plans is to prompt for type of framework, template, and data libs.
