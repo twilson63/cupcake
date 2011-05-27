@@ -1,1 +1,1 @@
-h1 "Welcome to <%= @project %>"
+h1 "Welcome to <%= @name %>"
