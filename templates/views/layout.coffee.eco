@@ -1,7 +1,11 @@
 doctype 5
 html ->
   head ->
+  <% if @framework == 'express': %>
     title 'Express Coffee with CoffeeKup'
+  <% else if @framework == 'meryl': %>
+    title 'Meryl flavored Coffee with CoffeeKup'
+  <% end %>
     meta charset: 'utf-8'
 
     title "#{@title} | My Site" if @title?
@@ -34,7 +38,11 @@ html ->
               li -> a href: "/#{item.toLowerCase()}", title: item, -> item
 
       div id: 'content', ->
+<% if @framework == 'express': %>
         @body
+<% else if @framework == 'meryl': %>
+        @render @body
+<% end %>
 
       footer ->
         p -> a href: '/privacy', -> 'Privacy Policy'

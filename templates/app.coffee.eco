@@ -1,5 +1,10 @@
-<% if @datastore == 'mongoskin': %>db = require 'mongoskin'<% else if @datastore == 'redis': %>db = require 'redis'<% else: %>db = require 'mysql'<% end %>
-
+<% if @datastore == 'mongoskin': %>
+db = require 'mongoskin'
+<% else if @datastore == 'redis': %>
+db = require 'redis'
+<% else: %>
+db = require 'mysql'
+<% end %>
 <% if @framework == 'express': %>
 express = require('express')
 app = express.createServer()
@@ -20,19 +25,40 @@ app.set 'view engine', 'jade'
 app.use express.static(__dirname + '/public')
 
 # App Routes
-app.get '/', (request, response) ->
-  response.render 'index'
-
+app.get '/', (req, resp) ->
+  resp.render 'index'
+  
 # Listen
 app.listen 3000
 
 <% else if @framework == 'meryl': %>
-# Work in progress
+connect = require 'connect'
 meryl = require('meryl')
+
+opts=
+  templateDir: 'views'
+
+# Setup Template Engine
+<% if @template == 'coffeekup': %>
+coffeekup = require 'coffeekup'
+opts.templateExt = '.coffee'
+opts.templateFunc = coffeekup.adapters.meryl
+<% else if @template == 'eco': %>
+opts.templateExt = '.eco',
+opts.templateFunc = eco.render
+<% else if @template == 'jade': %>
+opts.templateExt = '.jade',
+opts.templateFunc = (src, data) ->
+  return jade.render src, {locals: data}
+<% end %>
+
 meryl
-  .get '/', (req, res) ->
-    response.end 'Hello World'
-  .run()
+  .plug(connect.static 'public')
+  .get '/', (req, resp) ->
+    resp.render 'layout',
+      body: 'index'
+  .run opts
+  
 <% else if @framework == 'zappa': %>
 # Insert Zappa here!
 <% end %>

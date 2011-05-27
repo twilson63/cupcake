@@ -9,7 +9,7 @@ ARTIFACTS =
   framework:
     label: 'Web Framework'
     options: ['express',
-#      'meryl',
+      'meryl',
 #      'zappa'
     ]
   template:
