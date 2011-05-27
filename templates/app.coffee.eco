@@ -1,17 +1,17 @@
-<% if @datastore == '1': %>db = require 'mongoskin'<% else if @datastore == '2': %>db = require 'redis'<% else: %>db = require 'mysql'<% end %>
+<% if @datastore == 'mongoskin': %>db = require 'mongoskin'<% else if @datastore == 'redis': %>db = require 'redis'<% else: %>db = require 'mysql'<% end %>
 
-<% if @framework == '1': %>
+<% if @framework == 'express': %>
 express = require('express')
 app = express.createServer()
 
 # Setup Template Engine
-<% if @template == '1': %>
+<% if @template == 'coffeekup': %>
 app.register '.coffee', require('coffeekup')
 app.set 'view engine', 'coffee'
-<% else if @template == '2': %>
+<% else if @template == 'eco': %>
 app.register '.eco', require('eco')
 app.set 'view engine', 'eco'
-<% else if @template == '3': %>
+<% else if @template == 'jade': %>
 app.register '.jade', require('jade')
 app.set 'view engine', 'jade'
 <% end %>
@@ -26,13 +26,13 @@ app.get '/', (request, response) ->
 # Listen
 app.listen 3000
 
-<% else if @framework == '2': %>
+<% else if @framework == 'meryl': %>
 # Work in progress
 meryl = require('meryl')
 meryl
   .get '/', (req, res) ->
     response.end 'Hello World'
   .run()
-<% else if @framework == '3': %>
+<% else if @framework == 'zappa': %>
 # Insert Zappa here!
 <% end %>
