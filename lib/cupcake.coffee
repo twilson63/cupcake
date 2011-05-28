@@ -42,16 +42,17 @@ class Cupcake
       "./#{@project.name}"
       "./#{@project.name}/views"
       "./#{@project.name}/public"
-      "./#{@project.name}/stylesheets"
+      "./#{@project.name}/public/stylesheets"
     ] 
 
   build_files: ->
     # Create Template Files
     @render_template(name, @project) for name in @ROOT
+    template_name = if @project.template == 'coffeekup' then 'coffee' else @project.template
 
     @render_template(name, @project) for name in [
-      "views/layout.#{@project.template}"
-      "views/index.#{@project.template}"
+      "views/layout.#{template_name}"
+      "views/index.#{template_name}"
     ]
 
   display_choices: (val) ->
