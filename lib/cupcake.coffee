@@ -1,5 +1,5 @@
 class Cupcake
-  VERSION: '0.0.6'
+  VERSION: '0.0.7'
 
   ROOT: [
     'package.json'
@@ -75,9 +75,12 @@ Thank you for using cupcake, please let us know if you have any problems
 """
 
   prompt_for_artifacts: (callback) ->
+    # init locals
     choices = {}
     i = 0
     keys = Object.keys @ARTIFACTS
+    
+    # setup recursion
     prompt = =>
       return callback(choices) if i == keys.length
       key = keys[i]

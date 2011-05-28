@@ -43,15 +43,22 @@ views
 
 Don't forget to make adjustments to your Readme, and Package.js
 
+# Test
+
+    cake spec
+
 # Contribute
 
 Please send pull requests to continue to add, this is just the
 beginning.  Lets make an awesome application template generator!
 
+Thanks to :
+
 - [@kadirpekel](https://github.com/coffeemate)
 - [@kwindham](https://github.com/gradus)
 
 [https://github.com/twilson63/cupcake/contributors](https://github.com/twilson63/cupcake/contributors)
+
 
 # Present - (Working)
 
