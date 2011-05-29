@@ -1,3 +1,4 @@
+less = require 'less'
 <% if @datastore == 'mongoskin': %>
 db = require 'mongoskin'
 <% else if @datastore == 'redis': %>
@@ -21,6 +22,9 @@ app.register '.jade', require('jade')
 app.set 'view engine', 'jade'
 <% end %>
 
+# Setup CoffeeScript and Less
+app.use express.compiler({ src: __dirname + '/public', enable: ['less', 'coffeescript'] })
+
 # Setup Static Files
 app.use express.static(__dirname + '/public')
 
@@ -34,7 +38,6 @@ app.listen 3000
 <% else if @framework == 'meryl': %>
 connect = require 'connect'
 meryl = require('meryl')
-less = require('less')
 
 opts=
   templateDir: 'views'
@@ -54,8 +57,8 @@ opts.templateFunc = (src, data) ->
 <% end %>
 
 meryl
-  .plug(connect.compiler({ src: 'public', enable: ['less'] }))
-  .plug(connect.compiler({ src: 'public', enable: ['coffeescript'] }))
+  .plug(connect.compiler({ src: 'public', enable: ['less','coffeescript'] }))
+#  .plug(connect.compiler({ src: 'public', enable: ['coffeescript'] }))
   .plug(connect.static 'public')
   .get '/', (req, resp) ->
     resp.render 'layout',

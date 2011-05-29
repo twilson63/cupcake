@@ -4,6 +4,15 @@ _Have a cupcake with your express, coffee and coffeekup_
 
 A project generator for express and coffee-script.  
 
+# About 0.0.7
+
+* Choose your framework (express, meryl)
+* Choose your template engine (coffeekup, eco, or jade)
+* Choose your datastore (mongoskin, redis, or mysql)
+
+---
+Comes with client coffeescript and less ready to go out of the box.
+
 # Requirements
 
 * nodejs

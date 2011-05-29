@@ -43,7 +43,8 @@ class Cupcake
       "./#{@project.name}/views"
       "./#{@project.name}/public"
       "./#{@project.name}/public/stylesheets"
-    ] 
+      "./#{@project.name}/public/javascripts"
+    ]
 
   build_files: ->
     # Create Template Files
@@ -80,14 +81,14 @@ Thank you for using cupcake, please let us know if you have any problems
     choices = {}
     i = 0
     keys = Object.keys @ARTIFACTS
-    
+
     # setup recursion
     prompt = =>
       return callback(choices) if i == keys.length
       key = keys[i]
       val = @ARTIFACTS[key]
       @display_choices val
-      
+
       @ask 'Enter Number', /[0-9]/, (choice) =>
         option = val.options[parseInt(choice) - 1]
         if option?
@@ -102,7 +103,7 @@ Thank you for using cupcake, please let us know if you have any problems
     unless process.argv.length == 3
       console.log 'Please enter project name!' 
       return
-    
+
     console.log "Welcome to Cupcake - #{@VERSION}"
     project = {name: process.argv[2]}
     @prompt_for_artifacts (choices) =>
