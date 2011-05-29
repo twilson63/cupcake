@@ -11,6 +11,7 @@
     <% if @template == 'coffeekup': %>"coffeekup": ">= 0.x",<% else if @template == 'eco': %>"eco": ">= 0.x",<% else: %>"jade": ">= 0.x",<% end %>
     <% if @framework == 'express': %>"express": ">= 2.x",<% else if @framework == 'meryl': %>"meryl": "> 0.x", <% else: %>"zappa": ">= 0.x",<% end %>
     "connect": ">= 1.x",
+    "less": ">= 0.x",
     "log4js": ">= 0.2.5"
   },
   "engines": { "node": ">= 0.4.7" }

@@ -34,6 +34,7 @@ app.listen 3000
 <% else if @framework == 'meryl': %>
 connect = require 'connect'
 meryl = require('meryl')
+less = require('less')
 
 opts=
   templateDir: 'views'
@@ -53,6 +54,8 @@ opts.templateFunc = (src, data) ->
 <% end %>
 
 meryl
+  .plug(connect.compiler({ src: 'public', enable: ['less'] }))
+  .plug(connect.compiler({ src: 'public', enable: ['coffeescript'] }))
   .plug(connect.static 'public')
   .get '/', (req, resp) ->
     resp.render 'layout',
