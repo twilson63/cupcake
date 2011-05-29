@@ -2,11 +2,12 @@
 <html>
   <head>
     <% if @framework == 'express': %>
-    <title>Express CoffeeScript App with Eco</title
+    <title>Express CoffeeScript App with Eco</title>
     <% else if @framework == 'meryl': %>
     <title>Meryl CoffeeScript with Eco</title>
+    <% end %>
   </head>
   <body>
-    <%= '%lt;&= @body %%gt;' %>
+    <!-- Add your view here --/>
   </body>
 </html>
