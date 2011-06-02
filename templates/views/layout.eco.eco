@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <% if @framework == 'express': %>
+    <title>Express CoffeeScript App with Eco</title>
+    <% else if @framework == 'meryl': %>
+    <title>Meryl CoffeeScript with Eco</title>
+    <% end %>
+  </head>
+  <body>
+    <!-- Add your view here --/>
+  </body>
+</html>

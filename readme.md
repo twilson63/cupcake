@@ -4,6 +4,15 @@ _Have a cupcake with your express, coffee and coffeekup_
 
 A project generator for express and coffee-script.  
 
+# About 0.0.7
+
+* Choose your framework (express, meryl)
+* Choose your template engine (coffeekup, eco, or jade)
+* Choose your datastore (mongoskin, redis, or mysql)
+
+---
+Comes with client coffeescript and less ready to go out of the box.
+
 # Requirements
 
 * nodejs
@@ -43,10 +52,32 @@ views
 
 Don't forget to make adjustments to your Readme, and Package.js
 
+# Test
+
+    cake spec
+
 # Contribute
 
 Please send pull requests to continue to add, this is just the
 beginning.  Lets make an awesome application template generator!
+
+Thanks to :
+
+- [@kadirpekel](https://github.com/coffeemate)
+- [@kwindham](https://github.com/gradus)
+
+[https://github.com/twilson63/cupcake/contributors](https://github.com/twilson63/cupcake/contributors)
+
+
+# Present - (Working)
+
+As of 0.0.6
+
+You now create an Express or Meryl project, with Coffeekup, Eco, or
+Jade, and Mongoskin, Redis, or MySql.
+
+Working on Zappa next....
+
 
 # Future - (In Progress)
 
