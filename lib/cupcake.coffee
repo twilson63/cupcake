@@ -14,7 +14,7 @@ class Cupcake
       label: 'Web Framework'
       options: ['express',
         'meryl',
-  #      'zappa'
+        'coffeemate'
       ]
     template:
       label: 'Template Engine'
