@@ -27,21 +27,21 @@ html ->
       #content {margin-left: 120px}
     '''
   body ->
-      header ->
-        a href: '/', title: 'Home', -> 'Home'
+    header ->
+      a href: '/', title: 'Home', -> 'Home'
 
-        nav ->
-          ul ->
-            for item in ['About', 'Pricing', 'Contact']
-              li -> a href: "/#{item.toLowerCase()}", title: item, -> item
+      nav ->
+        ul ->
+          for item in ['About', 'Pricing', 'Contact']
+            li -> a href: "/#{item.toLowerCase()}", title: item, -> item
 
-      div id: 'content', ->
+    div id: 'content', ->
 <% if @framework == 'express': %>
-        @body
+      @body
 <% else if @framework == 'meryl': %>
-        @render @body
+      @render @body
 <% end %>
 
-      footer ->
-        p -> a href: '/privacy', -> 'Privacy Policy'
+    footer ->
+      p -> a href: '/privacy', -> 'Privacy Policy'
 

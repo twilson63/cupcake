@@ -18,9 +18,11 @@ class Cupcake
       ]
     template:
       label: 'Template Engine'
-      options: ['coffeekup', 
+      options: [
+        'coffeekup' 
         #'eco', 
-        'jade']
+        'jade'
+      ]
     datastore:
       label: 'Data Store'
       options: ['mongoskin', 'redis', 'mysql']
