@@ -26,7 +26,7 @@ app.use express.static(__dirname + '/public')
 
 # App Routes
 app.get '/', (req, resp) ->
-  resp.render 'index'
+  resp.render 'index', title: 'Awesome Sauce'
   
 # Listen
 app.listen 3000
