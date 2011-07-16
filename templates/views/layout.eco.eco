@@ -8,6 +8,6 @@
     <% end %>
   </head>
   <body>
-    <!-- Add your view here --/>
+    <%- @body %>
   </body>
 </html>

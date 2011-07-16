@@ -1,13 +1,13 @@
 {
   "name": "cupcake",
   "description": "With Sprinkles",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "homepage": "http://github.com/twilson63/cupcake",
   "keywords": ["javascript", "express", "coffeescript", "coffeekup", "generator", "eco"],
   "author": "twilson63",
   "dependencies": {
     "coffee-script": "1.1.1",
-    "eco": "1.0.3",
+    "eco": "1.1.x",
     "ask": ">= 0.x",
     "jasmine-node": ">= 0.x"
   },

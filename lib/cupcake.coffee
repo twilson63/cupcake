@@ -20,7 +20,7 @@ class Cupcake
       label: 'Template Engine'
       options: [
         'coffeekup' 
-        #'eco', 
+        'eco', 
         'jade'
       ]
     datastore:
