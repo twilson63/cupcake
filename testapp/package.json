@@ -1,0 +1,17 @@
+{
+  "name": "testapp",
+  "description": "Enter Description Here",
+  "version": "0.0.1",
+  "homepage": "http://#",
+  "author": "You",
+  "private": true,
+  "dependencies": {
+    "coffee-script": ">= 1.x",
+    "redis": ">= 0.x",
+    "jade": ">= 0.x",
+    "express": ">= 2.x",
+    "log4js": ">= 0.2.5"
+  },
+  "engines": { "node": ">= 0.4.7" }
+}
+

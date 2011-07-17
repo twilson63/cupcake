@@ -4,7 +4,7 @@ _Have a cupcake with your express, coffee and coffeekup_
 
 A project generator for express and coffee-script.  
 
-# About 0.1.0
+# About 0.1.1
 
 * Choose your framework (express, meryl)
 * Choose your template engine (coffeekup, eco, or jade)

@@ -1,7 +1,7 @@
 {
   "name": "cupcake",
   "description": "With Sprinkles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/twilson63/cupcake",
   "keywords": ["javascript", "express", "coffeescript", "coffeekup", "generator", "eco"],
   "author": "twilson63",
