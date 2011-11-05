@@ -1,6 +1,22 @@
 !!! 5
-html(lang="en")
-  head
-    title Jade Templates
-  body
-    != body
+//if lt IE 7 ]><html class="ie ie6" lang="en">
+//if IE 7 ]><html class="ie ie7" lang="en">
+//if IE 8 ]><html class="ie ie8" lang="en">
+// [if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]
+head
+  meta(charset='utf-8')
+  title= title
+  meta(name='description', content='')
+  meta(name='author', content='')
+  // Mobile Specific
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+  // CSS
+  link(rel="stylesheet", href="http://wilbur.io.s3.amazonaws.com/all.css")
+  
+body
+  != body
+
+  script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js')
+
+| </html>

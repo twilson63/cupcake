@@ -1,5 +1,13 @@
+eco = require 'eco'
+fs = require 'fs'
+ask = require('ask').ask
+
 class Cupcake
-  VERSION: '0.0.8'
+  eco: eco
+  fs: fs
+  ask: ask
+
+  VERSION: '0.2.0'
 
   ROOT: [
     'package.json'
@@ -10,32 +18,18 @@ class Cupcake
   ]
 
   ARTIFACTS: 
-    framework:
-      label: 'Web Framework'
-      options: ['express',
-        'meryl',
-        'coffeemate'
-      ]
     template:
       label: 'Template Engine'
-      options: [
-        'coffeekup' 
-        'eco', 
-        'jade'
-      ]
+      options: ['jade','eco', 'coffeekup']
     datastore:
       label: 'Data Store'
-      options: ['mongoskin', 'redis', 'mysql']
+      options: ['request', 'mysql', 'mongoskin']
   
-  sys: require 'sys'
-  eco: require 'eco'
-  fs: require 'fs'
-  ask: (require 'ask').ask
   project: 
     name: 'foobar'
     framework: 'express'
-    template: 'coffeekup'
-    datastore: 'mongoskin'
+    template: 'jade'
+    datastore: 'request'
 
   render_template: (name, project) ->
     template = @fs.readFileSync __dirname + "/../templates/#{name}.eco", "utf8"
@@ -113,10 +107,9 @@ Thank you for using cupcake, please let us know if you have any problems
     @prompt_for_artifacts (choices) =>
       @project =
         name: process.argv[2]
-        framework: choices.framework
+        framework: 'express' # default
         template: choices.template
         datastore: choices.datastore
-      #console.log sys.inspect(project)
       @build_folders()
       @build_files()
       @thank_you()
