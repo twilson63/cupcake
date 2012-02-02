@@ -48,6 +48,7 @@ coffee app.coffee
 
 CupCake creates the following files for you to get hacking:
 
+```
 app.coffee
 app.js
 package.json
@@ -63,6 +64,7 @@ assets
 views
   index.coffee
   layout.coffee
+```
 
 Don't forget to make adjustments to your Readme, and Package.js
 
