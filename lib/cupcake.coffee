@@ -1,13 +1,13 @@
 eco = require 'eco'
 fs = require 'fs'
-ask = require('ask').ask
+ask = require('ask')
 
 class Cupcake
   eco: eco
   fs: fs
   ask: ask
 
-  VERSION: '0.2.0'
+  VERSION: '0.2.1'
 
   ROOT: [
     'package.json'
