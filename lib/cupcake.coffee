@@ -7,7 +7,7 @@ class Cupcake
   fs: fs
   ask: ask
 
-  VERSION: '0.2.1'
+  VERSION: '0.3.0'
 
   ROOT: [
     'package.json'
@@ -23,7 +23,7 @@ class Cupcake
       options: ['jade','eco', 'coffeekup']
     datastore:
       label: 'Data Store'
-      options: ['request', 'mysql', 'mongoskin']
+      options: ['nano', 'mysql', 'mongoose']
   
   project: 
     name: 'foobar'
@@ -39,15 +39,21 @@ class Cupcake
     @fs.mkdirSync directory, 0755 for directory in [
       "./#{@project.name}"
       "./#{@project.name}/views"
+      "./#{@project.name}/assets"
+      "./#{@project.name}/assets/js"
+      "./#{@project.name}/assets/css"
       "./#{@project.name}/public"
-      "./#{@project.name}/public/stylesheets"
-      "./#{@project.name}/public/javascripts"
     ]
 
   build_files: ->
     # Create Template Files
     @render_template(name, @project) for name in @ROOT
     template_name = if @project.template == 'coffeekup' then 'coffee' else @project.template
+    # create asset files
+    @render_template("assets/js/app.coffee", @project)
+    @render_template("assets/css/app.styl", @project)
+    @render_template("public/404.html", @project)
+    @render_template("public/robots.txt", @project)
 
     @render_template(name, @project) for name in [
       "views/layout.#{template_name}"
@@ -65,8 +71,9 @@ class Cupcake
 -----------------
 Successfully created #{@project.name}
 To Run
+-----------------
 cd #{@project.name}
-npm install .
+npm install
 coffee app.coffee
 -----------------
 You should nav to http://localhost:3000

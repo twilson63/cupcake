@@ -7,11 +7,13 @@
   "private": true,
   "dependencies": {
     "coffee-script": ">= 1.x",
-    <% if @datastore == 'mongoskin': %>"mongoskin": "*",<% else if @datastore == 'request': %>"request": "*",<% else: %>"mysql": "*",<% end %>
-    <% if @template == 'coffeekup': %>"coffeekup": "*",<% else if @template == 'eco': %>"eco": "*",<% else: %>"jade": "*",<% end %>
-    <% if @framework == 'express': %>"express": "*"<% else: %>"coffeemate": "*"<% end %>
-
+    "<%= @datastore %>": "*",
+    "<%= @template %>": "*",
+    "connect-assets": "*",
+    "stylus": "*",
+    "nib": "*",
+    "<%= @framework %>": "*"
   },
-  "engines": { "node": ">= 0.4.7" }
+  "engines": { "node": "0.6 || 0.7" }
 }
 

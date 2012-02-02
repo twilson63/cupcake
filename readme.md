@@ -1,40 +1,48 @@
 # CupCake
 
-_Have a cupcake with your express, coffee and coffeekup_
+Get a jumpstart to your express-coffee app!
 
-A project generator for express and coffee-script.  
-
-# About 0.2.0
+## All about choice
 
 * Choose your template engine (jade, eco, or coffeekup)
-* Choose your datastore (request, mysql, mongoskin)
+* Choose your datastore (nano, mysql, mongoose)
+
+## Cupcake automatically installs these modules for you:
+
+* Connect Assets
+* Stylus
+* Nib
 
 ---
 
 # Requirements
 
-* nodejs
-* npm
+* nodejs >= 0.6
 
 # Install
 
-    npm install cupcake -g
+```
+npm install cupcake -g
+```
 
 # Usage
 
-    cupcake [project name]
+```
+cupcake [project name]
 
-    - choose your template
-    - choose your datastore
-
+- choose your template
+- choose your datastore
+```
     
 # Run your new project
 
-    cd [project name]
-    npm install .
-    coffee app.coffee
+``` sh
+cd [project name]
+npm install .
+coffee app.coffee
 
-    # Goto http://localhost:3000
+# Goto http://localhost:3000
+```
 
 # You have a working express app in coffee-script!
 
@@ -44,6 +52,14 @@ app.coffee
 app.js
 package.json
 readme.md
+public
+  404.html
+  robots.txt
+assets
+  js
+    app.coffee
+  css
+    app.styl
 views
   index.coffee
   layout.coffee
@@ -51,8 +67,10 @@ views
 Don't forget to make adjustments to your Readme, and Package.js
 
 # Test
-    cake spec
 
+``` sh
+cake spec
+```
 # Contribute
 
 Please send pull requests to continue to add, this is just the

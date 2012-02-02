@@ -6,6 +6,7 @@
     <% else if @framework == 'meryl': %>
     <title>Meryl CoffeeScript with Eco</title>
     <% end %>
+    
   </head>
   <body>
     <%%- @body %>

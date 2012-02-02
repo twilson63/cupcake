@@ -12,11 +12,10 @@ head
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
   // CSS
-  link(rel="stylesheet", href="http://wilbur.io.s3.amazonaws.com/all.css")
+  != css('app')
   
 body
   != body
 
   script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js')
-
-| </html>
+  != js('app')
