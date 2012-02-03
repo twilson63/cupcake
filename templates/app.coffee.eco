@@ -3,7 +3,7 @@
 express = require 'express'
 app = express.createServer()
 
-app.register '.<%= if @template == 'coffeekup' then 'coffee' else "#{@template}" %>'
+app.register '.<%= if @template == 'coffeekup' then "coffee, require('coffeekup').adapters.express" else "#{@template}" %>'
 app.set 'view engine', '<%= if @template == 'coffeekup' then 'coffee' else "#{@template}" %>'
 
 # Setup Static Files
