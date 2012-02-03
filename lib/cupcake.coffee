@@ -1,5 +1,13 @@
+eco = require 'eco'
+fs = require 'fs'
+ask = require('ask')
+
 class Cupcake
-  VERSION: '0.0.7'
+  eco: eco
+  fs: fs
+  ask: ask
+
+  VERSION: '0.3.0'
 
   ROOT: [
     'package.json'
@@ -10,30 +18,18 @@ class Cupcake
   ]
 
   ARTIFACTS: 
-    framework:
-      label: 'Web Framework'
-      options: ['express',
-        'meryl',
-  #      'zappa'
-      ]
     template:
       label: 'Template Engine'
-      options: ['coffeekup', 
-        #'eco', 
-        'jade']
+      options: ['jade','eco', 'coffeekup']
     datastore:
       label: 'Data Store'
-      options: ['mongoskin', 'redis', 'mysql']
+      options: ['nano', 'mysql', 'mongoose']
   
-  sys: require 'sys'
-  eco: require 'eco'
-  fs: require 'fs'
-  ask: (require 'ask').ask
   project: 
     name: 'foobar'
     framework: 'express'
-    template: 'coffeekup'
-    datastore: 'mongoskin'
+    template: 'jade'
+    datastore: 'request'
 
   render_template: (name, project) ->
     template = @fs.readFileSync __dirname + "/../templates/#{name}.eco", "utf8"
@@ -43,15 +39,21 @@ class Cupcake
     @fs.mkdirSync directory, 0755 for directory in [
       "./#{@project.name}"
       "./#{@project.name}/views"
+      "./#{@project.name}/assets"
+      "./#{@project.name}/assets/js"
+      "./#{@project.name}/assets/css"
       "./#{@project.name}/public"
-      "./#{@project.name}/public/stylesheets"
-      "./#{@project.name}/public/javascripts"
     ]
 
   build_files: ->
     # Create Template Files
     @render_template(name, @project) for name in @ROOT
     template_name = if @project.template == 'coffeekup' then 'coffee' else @project.template
+    # create asset files
+    @render_template("assets/js/app.coffee", @project)
+    @render_template("assets/css/app.styl", @project)
+    @render_template("public/404.html", @project)
+    @render_template("public/robots.txt", @project)
 
     @render_template(name, @project) for name in [
       "views/layout.#{template_name}"
@@ -69,8 +71,9 @@ class Cupcake
 -----------------
 Successfully created #{@project.name}
 To Run
+-----------------
 cd #{@project.name}
-npm install .
+npm install
 coffee app.coffee
 -----------------
 You should nav to http://localhost:3000
@@ -111,10 +114,9 @@ Thank you for using cupcake, please let us know if you have any problems
     @prompt_for_artifacts (choices) =>
       @project =
         name: process.argv[2]
-        framework: choices.framework
+        framework: 'express' # default
         template: choices.template
         datastore: choices.datastore
-      #console.log sys.inspect(project)
       @build_folders()
       @build_files()
       @thank_you()

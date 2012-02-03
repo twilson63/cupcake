@@ -1,70 +1,20 @@
-less = require 'less'
-<% if @datastore == 'mongoskin': %>
-db = require 'mongoskin'
-<% else if @datastore == 'redis': %>
-db = require 'redis'
-<% else: %>
-db = require 'mysql'
-<% end %>
-<% if @framework == 'express': %>
-express = require('express')
+<%= @template %> = require '<%= @template %>'
+<%= @datastore %> = require '<%= @datastore %>'
+express = require 'express'
 app = express.createServer()
 
-# Setup Template Engine
-<% if @template == 'coffeekup': %>
-app.register '.coffee', require('coffeekup')
-app.set 'view engine', 'coffee'
-<% else if @template == 'eco': %>
-app.register '.eco', require('eco')
-app.set 'view engine', 'eco'
-<% else if @template == 'jade': %>
-app.register '.jade', require('jade')
-app.set 'view engine', 'jade'
-<% end %>
-
-# Setup CoffeeScript and Less
-app.use express.compiler({ src: __dirname + '/public', enable: ['less', 'coffeescript'] })
+app.register '.<%= if @template == 'coffeekup' then 'coffee' else "#{@template}" %>'
+app.set 'view engine', '<%= if @template == 'coffeekup' then 'coffee' else "#{@template}" %>'
 
 # Setup Static Files
 app.use express.static(__dirname + '/public')
 
+# Setup Assets
+app.use require('connect-assets')()
+
 # App Routes
 app.get '/', (req, resp) ->
-  resp.render 'index'
+  resp.render 'index', title: 'You Title Here'
   
 # Listen
-app.listen 3000
-
-<% else if @framework == 'meryl': %>
-connect = require 'connect'
-meryl = require('meryl')
-
-opts=
-  templateDir: 'views'
-
-# Setup Template Engine
-<% if @template == 'coffeekup': %>
-coffeekup = require 'coffeekup'
-opts.templateExt = '.coffee'
-opts.templateFunc = coffeekup.adapters.meryl
-<% else if @template == 'eco': %>
-opts.templateExt = '.eco',
-opts.templateFunc = eco.render
-<% else if @template == 'jade': %>
-opts.templateExt = '.jade',
-opts.templateFunc = (src, data) ->
-  return jade.render src, {locals: data}
-<% end %>
-
-meryl
-  .plug(connect.compiler({ src: 'public', enable: ['less','coffeescript'] }))
-#  .plug(connect.compiler({ src: 'public', enable: ['coffeescript'] }))
-  .plug(connect.static 'public')
-  .get '/', (req, resp) ->
-    resp.render 'layout',
-      body: 'index'
-  .run opts
-  
-<% else if @framework == 'zappa': %>
-# Insert Zappa here!
-<% end %>
+app.listen 3000, -> console.log 'Listening on port 3000'

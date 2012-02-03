@@ -1,61 +1,78 @@
 # CupCake
 
-_Have a cupcake with your express, coffee and coffeekup_
+Get a jumpstart to your express-coffee app!
 
-A project generator for express and coffee-script.  
+## All about choice
 
-# About 0.0.7
+* Choose your template engine (jade, eco, or coffeekup)
+* Choose your datastore (nano, mysql, mongoose)
 
-* Choose your framework (express, meryl)
-* Choose your template engine (coffeekup, eco, or jade)
-* Choose your datastore (mongoskin, redis, or mysql)
+## Cupcake automatically installs these modules for you:
+
+* Connect Assets
+* Stylus
+* Nib
 
 ---
-Comes with client coffeescript and less ready to go out of the box.
 
 # Requirements
 
-* nodejs
-* npm
+* nodejs >= 0.6
 
 # Install
 
-    npm install cupcake -g
+```
+npm install cupcake -g
+```
 
 # Usage
 
-    cupcake [project name]
+```
+cupcake [project name]
 
-    - choose your template
-    - choose your datastore
-
+- choose your template
+- choose your datastore
+```
     
 # Run your new project
 
-    cd [project name]
-    npm install .
-    coffee app.coffee
+``` sh
+cd [project name]
+npm install .
+coffee app.coffee
 
-    # Goto http://localhost:3000
+# Goto http://localhost:3000
+```
 
 # You have a working express app in coffee-script!
 
 CupCake creates the following files for you to get hacking:
 
+```
 app.coffee
 app.js
 package.json
 readme.md
+public
+  404.html
+  robots.txt
+assets
+  js
+    app.coffee
+  css
+    app.styl
 views
   index.coffee
   layout.coffee
+```
 
 Don't forget to make adjustments to your Readme, and Package.js
 
 # Test
 
-    cake spec
-
+``` sh
+cake spec
+```
 # Contribute
 
 Please send pull requests to continue to add, this is just the
@@ -68,47 +85,11 @@ Thanks to :
 
 [https://github.com/twilson63/cupcake/contributors](https://github.com/twilson63/cupcake/contributors)
 
-
-# Present - (Working)
-
-As of 0.0.6
-
-You now create an Express or Meryl project, with Coffeekup, Eco, or
-Jade, and Mongoskin, Redis, or MySql.
-
-Working on Zappa next....
-
-
-# Future - (In Progress)
-
-The plans is to prompt for type of framework, template, and data libs.
-For example:
-
-    cupcake my_project
-    #
-    Welcome to CupCake!
-
-    What Framework would you like?
-    1. Express
-    2. Meryl
-    3. Zappa
-
-    What Template Engine would you like?
-    1. CoffeeKup
-    2. Eco
-    3. Jade
-
-    What DataStore would you like?
-    1. MongoDb
-    2. Redis
-    3. MySql
-
-
 # Feedback
 
 Please post an issue or tweet [@jackhq](http://twitter.com/jackhq)
 
-# License
+# Copyright
 
 See LICENSE
 

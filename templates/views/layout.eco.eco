@@ -6,8 +6,9 @@
     <% else if @framework == 'meryl': %>
     <title>Meryl CoffeeScript with Eco</title>
     <% end %>
+    
   </head>
   <body>
-    <!-- Add your view here --/>
+    <%%- @body %>
   </body>
 </html>
