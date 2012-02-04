@@ -74,7 +74,7 @@ To Run
 -----------------
 cd #{@project.name}
 npm install
-coffee app.coffee
+npm start
 -----------------
 You should nav to http://localhost:3000
 -----------------

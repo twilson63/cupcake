@@ -4,8 +4,8 @@ Get a jumpstart to your express-coffee app!
 
 ## All about choice
 
-* Choose your template engine (jade, eco, or coffeekup)
-* Choose your datastore (nano, mysql, mongoose)
+* Choose your template engine (jade, eco, coffeekup, whiskers)
+* Choose your datastore (redis, nano, mysql, mongoose, mongoskin)
 
 ## Cupcake automatically installs these modules for you:
 
@@ -38,8 +38,8 @@ cupcake [project name]
 
 ``` sh
 cd [project name]
-npm install .
-coffee app.coffee
+npm install 
+npm start
 
 # Goto http://localhost:3000
 ```
