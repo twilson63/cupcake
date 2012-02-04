@@ -1,9 +1,10 @@
 <%= @template %> = require '<%= @template %>'
 <%= @datastore %> = require '<%= @datastore %>'
+<% @template = 'coffee' if @template == 'coffeekup' %>
 express = require 'express'
 app = express.createServer()
 
-app.register <%= if @template == 'coffeekup' then "'.coffee', require('coffeekup').adapters.express" else "'.#{@template}'" %>
+app.register <%= if @template == 'coffee' then "'.coffee', require('coffeekup').adapters.express" else "'.#{@template}', #{@template}" %>
 
 # Setup Static Files
 app.use express.static(__dirname + '/public')
@@ -13,7 +14,7 @@ app.use require('connect-assets')()
 
 # App Routes
 app.get '/', (req, resp) ->
-  resp.render 'index', title: 'Your Title Here'
+  resp.render 'index<%= ".#{@template}" %>', title: 'Your Title Here'
 
 # Listen
 app.listen 3000, -> console.log 'Listening on port 3000'

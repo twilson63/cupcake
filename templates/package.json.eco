@@ -5,6 +5,9 @@
   "homepage": "http://#",
   "author": "You",
   "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "coffee-script": ">= 1.x",
     "<%= @datastore %>": "*",

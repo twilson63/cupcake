@@ -7,7 +7,7 @@ class Cupcake
   fs: fs
   ask: ask
 
-  VERSION: '0.3.1'
+  VERSION: '0.3.2'
 
   ROOT: [
     'package.json'
@@ -20,10 +20,10 @@ class Cupcake
   ARTIFACTS: 
     template:
       label: 'Template Engine'
-      options: ['jade','eco', 'coffeekup']
+      options: ['jade','eco', 'coffeekup', 'whiskers']
     datastore:
       label: 'Data Store'
-      options: ['nano', 'mysql', 'mongoose']
+      options: ['redis', 'nano', 'mysql', 'mongoose', 'mongoskin']
   
   project: 
     name: 'foobar'
