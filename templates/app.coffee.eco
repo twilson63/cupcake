@@ -5,6 +5,7 @@ express = require 'express'
 app = express.createServer()
 
 app.register <%= if @template == 'coffee' then "'.coffee', require('coffeekup').adapters.express" else "'.#{@template}', #{@template}" %>
+app.set 'view engine', '<%= if @template == 'coffeekup' then 'coffee' else "#{@template}" %>'
 
 # Setup Static Files
 app.use express.static(__dirname + '/public')
