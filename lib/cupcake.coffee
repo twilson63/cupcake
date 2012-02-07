@@ -11,7 +11,7 @@ class Cupcake
 
   ROOT: [
     'package.json'
-    'app.js'
+    'server.js'
     'app.coffee'
     'readme.md'
     'Procfile'
