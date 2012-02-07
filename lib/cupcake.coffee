@@ -11,7 +11,7 @@ class Cupcake
 
   ROOT: [
     'package.json'
-    'app.js'
+    'server.js'
     'app.coffee'
     'readme.md'
     'Procfile'
@@ -24,8 +24,8 @@ class Cupcake
     datastore:
       label: 'Data Store'
       options: ['redis', 'nano', 'mysql', 'mongoose', 'mongoskin']
-  
-  project: 
+
+  project:
     name: 'foobar'
     framework: 'express'
     template: 'jade'
@@ -106,7 +106,7 @@ Thank you for using cupcake, please let us know if you have any problems
 
   run: ->
     unless process.argv.length == 3
-      console.log 'Please enter project name!' 
+      console.log 'Please enter project name!'
       return
 
     console.log "Welcome to Cupcake - #{@VERSION}"

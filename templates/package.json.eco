@@ -6,7 +6,7 @@
   "author": "You",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "coffee-script": ">= 1.x",
