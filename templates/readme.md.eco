@@ -4,7 +4,7 @@ Welcome
 
 Framework: <% if @framework == 'express': %>express<% else if @framework == 'meryl': %>meryl<% else: %>zappa<% end %>
  
-Template: <% if @template == 'coffeekup': %>Coffeekup<% else if @template == 'eco': %>Eco<% else: %>Jade<% end %>
+Template: <% if @template == 'coffeecup': %>CoffeeCup<% else if @template == 'eco': %>Eco<% else: %>Jade<% end %>
 
 DataStore: <% if @datastore == 'mongoskin': %>MongoSkin<% else if @datastore == 'redis': %>Redis<% else: %>MySql<% end %>
  
