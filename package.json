@@ -7,7 +7,7 @@
   "author": "Tom Wilson",
   "dependencies": {
     "eco": "1.1.x",
-    "ask": "0.1.0",
+    "ask": "0.1.0"
   },
   "directories" : {
     "lib" : "./lib",
