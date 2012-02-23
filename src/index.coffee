@@ -1,13 +1,13 @@
 eco = require 'eco'
 fs = require 'fs'
-ask = require('ask')
+ask = require 'ask'
 
 class Cupcake
   eco: eco
   fs: fs
   ask: ask
 
-  VERSION: '0.3.3'
+  VERSION: '0.3.4'
 
   ROOT: [
     'package.json'
@@ -20,7 +20,7 @@ class Cupcake
   ARTIFACTS: 
     template:
       label: 'Template Engine'
-      options: ['jade','eco', 'coffeekup', 'whiskers']
+      options: ['jade','eco', 'coffeecup', 'whiskers']
     datastore:
       label: 'Data Store'
       options: ['redis', 'nano', 'mysql', 'mongoose', 'mongoskin']
@@ -48,7 +48,7 @@ class Cupcake
   build_files: ->
     # Create Template Files
     @render_template(name, @project) for name in @ROOT
-    template_name = if @project.template == 'coffeekup' then 'coffee' else @project.template
+    template_name = if @project.template == 'coffeecup' then 'coffee' else @project.template
     # create asset files
     @render_template("assets/js/app.coffee", @project)
     @render_template("assets/css/app.styl", @project)
@@ -122,7 +122,4 @@ Thank you for using cupcake, please let us know if you have any problems
       @thank_you()
       process.exit()
 
-exports.cupcake = new Cupcake
-
-
-
+module.exports = new Cupcake

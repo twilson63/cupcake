@@ -1,11 +1,11 @@
 <%= @template %> = require '<%= @template %>'
 <%= @datastore %> = require '<%= @datastore %>'
-<% @template = 'coffee' if @template == 'coffeekup' %>
+<% @template = 'coffee' if @template == 'coffeecup' %>
 express = require 'express'
 app = express.createServer()
 
-app.register <%= if @template == 'coffee' then "'.coffee', require('coffeekup').adapters.express" else "'.#{@template}', #{@template}" %>
-app.set 'view engine', '<%= if @template == 'coffeekup' then 'coffee' else "#{@template}" %>'
+app.register <%= if @template == 'coffee' then "'.coffee', require('coffeecup').adapters.express" else "'.#{@template}', #{@template}" %>
+app.set 'view engine', '<%= if @template == 'coffeecup' then 'coffee' else "#{@template}" %>'
 
 # Setup Static Files
 app.use express.static(__dirname + '/public')

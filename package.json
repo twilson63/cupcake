@@ -1,15 +1,13 @@
 {
   "name": "cupcake",
   "description": "Quick Coffee-Script Web App Template Generator",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "homepage": "http://github.com/twilson63/cupcake",
-  "keywords": ["javascript", "express", "coffeescript", "coffeekup", "generator", "eco"],
-  "author": "twilson63",
+  "keywords": ["javascript", "express", "coffeescript", "coffeecup", "generator", "eco"],
+  "author": "Tom Wilson",
   "dependencies": {
-    "coffee-script": ">= 1.1.x",
     "eco": "1.1.x",
-    "ask": "*",
-    "jasmine-node": ">= 0.x"
+    "ask": "0.1.0",
   },
   "directories" : {
     "lib" : "./lib",
@@ -20,4 +18,3 @@
     "cupcake":     "./bin/cupcake"
   }
 }
-
