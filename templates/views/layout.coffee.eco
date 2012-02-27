@@ -1,29 +1,18 @@
 doctype 5
 html ->
   head ->
-  <% if @framework == 'express': %>
-    title 'Express Coffee with CoffeeKup'
-  <% else if @framework == 'meryl': %>
-    title 'Meryl flavored Coffee with CoffeeKup'
-  <% end %>
+    title 'Cupcake and CoffeeCup'
     meta charset: 'utf-8'
-
     title "#{@title} | My Site" if @title?
     meta(name: 'description', content: @description) if @description?
     link(rel: 'canonical', href: @canonical) if @canonical?
-
     link rel: 'icon', href: '/favicon.png'
 
     script src: 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
 
-    coffeescript ->
-      $(document).ready ->
-        alert 'hi!'
-
     style '''
       header, nav, section, article, aside, footer {display: block}
       nav li {display: inline; margin:10px}
-      nav.sub {float: right}
       #content {margin-left: 120px}
     '''
   body ->
@@ -36,12 +25,12 @@ html ->
             li -> a href: "/#{item.toLowerCase()}", title: item, -> item
 
     div id: 'content', ->
-<% if @framework == 'express': %>
       @body
-<% else if @framework == 'meryl': %>
-      @render @body
-<% end %>
-
     footer ->
-      p -> a href: '/privacy', -> 'Privacy Policy'
+      p -> a href: '/', -> '&copy; Your Name'
+
+    coffeescript ->
+      $(document).ready ->
+        console.log "Ready"
+
 
