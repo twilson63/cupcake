@@ -12,6 +12,7 @@
     "coffee-script": ">= 1.x",
     "<%= @datastore %>": "*",
     "<%= @template %>": "*",
+    "uglify-js": "*",
     "connect-assets": "*",
     "stylus": "*",
     "nib": "*",

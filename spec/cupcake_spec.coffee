@@ -2,7 +2,7 @@ cupcake = require('../lib')
 
 describe 'cupcake', ->
   it 'should have version', ->
-    (expect cupcake.VERSION).toEqual('0.3.6')
+    (expect cupcake.VERSION).toEqual('0.3.7')
   it 'should root file count of 5', ->
     (expect cupcake.ROOT.length).toEqual(5)
 
