@@ -7,7 +7,7 @@ class Cupcake
   fs: fs
   ask: ask
 
-  VERSION: '0.3.5'
+  VERSION: '0.3.6'
 
   ROOT: [
     'package.json'
