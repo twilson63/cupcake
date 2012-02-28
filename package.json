@@ -9,6 +9,10 @@
     "eco": "1.1.x",
     "ask": "0.1.0"
   },
+  "devDependencies": {
+    "coffee-script": "*",
+    "node-jasmine": "*"
+  },
   "directories" : {
     "lib" : "./lib",
     "spec": "./spec"
@@ -18,6 +22,6 @@
     "cupcake":     "./bin/cupcake"
   },
   "scripts": {
-    "test": "cake spec"
+    "test": "jasmine-node spec --coffee"
   }
 }
