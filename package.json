@@ -18,6 +18,6 @@
     "cupcake":     "./bin/cupcake"
   },
   "scripts": {
-    "test": "./node_modules/coffee-script/bin/cake spec"
+    "test": "cake spec"
   }
 }
