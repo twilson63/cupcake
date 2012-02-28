@@ -2,6 +2,8 @@
 
 Get a jumpstart to your express-coffee app!
 
+[![Build Status](https://secure.travis-ci.org/twilson63/cupcake.png)](http://travis-ci.org/twilson63/cupcake)
+
 ## All about choice
 
 * Choose your template engine (jade, eco, coffeekup, whiskers)

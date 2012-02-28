@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "coffee-script": "*",
-    "node-jasmine": "*"
+    "jasmine-node": "*"
   },
   "directories" : {
     "lib" : "./lib",
