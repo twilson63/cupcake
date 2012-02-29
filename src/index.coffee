@@ -7,7 +7,7 @@ class Cupcake
   fs: fs
   ask: ask
 
-  VERSION: '0.3.7'
+  VERSION: '0.3.8'
 
   ROOT: [
     'package.json'
@@ -117,9 +117,15 @@ Thank you for using cupcake, please let us know if you have any problems
         framework: 'express' # default
         template: choices.template
         datastore: choices.datastore
-      @build_folders()
-      @build_files()
-      @thank_you()
-      process.exit()
+      try
+        @build_folders()
+        @build_files()
+        @thank_you()
+      catch err
+        console.log "!!!!!!!!!!!"
+        console.log "Error:\n"
+        console.log err.message.split(',')[1]
+      finally
+        process.exit()
 
 module.exports = new Cupcake
